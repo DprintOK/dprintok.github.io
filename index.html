@@ -54,6 +54,16 @@
         .chip{padding:.5rem 1.1rem;border-radius:9999px;font-weight:800;font-size:.9rem;border:2px solid #cbd5e1;background:#fff;color:#334155;transition:all .2s;white-space:nowrap}
         .chip.active{background:#1d4ed8;border-color:#1d4ed8;color:#fff;box-shadow:0 4px 12px rgba(29,78,216,.35)}
         mark{background:#fde68a;border-radius:3px;padding:0 2px}
+                html{font-size:16px!important;-webkit-text-size-adjust:100%;text-size-adjust:100%}
+        @media(min-width:769px){picture img{max-width:100%!important}}
+        .max-w-7xl{max-width:1500px!important}
+        @media(min-width:1024px){#documentGuidesContainer{grid-template-columns:repeat(4,minmax(0,1fr))!important}}
+        .sec-title{display:flex;align-items:center;gap:18px;margin-bottom:14px!important}
+        .sec-title .ln{flex:1;height:4px;border-radius:4px;background:linear-gradient(90deg,transparent,#1d4ed8)}
+        .sec-title .ln:last-child{background:linear-gradient(270deg,transparent,#1d4ed8)}
+        .sec-title .pill{padding-left:clamp(28px,6vw,90px)!important;padding-right:clamp(28px,6vw,90px)!important}
+        @media(max-width:640px){.sec-title{gap:8px}.sec-title .pill{padding-left:18px!important;padding-right:18px!important}}
+
         @media print{header,.fab,#toTop,footer,.no-print{display:none!important}}
     </style>
 </head>
@@ -81,11 +91,14 @@
         <!-- Hero banner -->
         <section style="margin-bottom:20px">
             <h2 style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap">ઝેરોક્ષ | ફોટા | લેમિનેશન | ઓનલાઈન</h2>
-            <img src="banner.jpg?v=3" alt="દર્શન ફોટોઝ એન્ડ ઝેરોક્ષ - પ્રિન્ટ, ફોટા, લેમિનેશન, ડોક્યુમેન્ટ્સ, ઓનલાઈન સેવાઓ ઉપલબ્ધ" width="2560" height="858" fetchpriority="high" style="display:block;width:100%;max-width:960px;margin:0 auto;height:auto;">
+            <picture>
+                <source media="(min-width:769px)" srcset="banner-wide.jpg?v=2" width="2560" height="550">
+                <img src="banner.jpg?v=3" alt="દર્શન ફોટોઝ એન્ડ ઝેરોક્ષ - પ્રિન્ટ, ફોટા, લેમિનેશન, ડોક્યુમેન્ટ્સ, ઓનલાઈન સેવાઓ ઉપલબ્ધ" width="2560" height="858" fetchpriority="high" style="display:block;width:100%;max-width:960px;margin:0 auto;height:auto;">
+            </picture>
         </section>
 
         <!-- Filter chips -->
-        <div class="flex justify-center gap-2 flex-wrap no-print" id="chips" style="margin-bottom:20px">
+        <div class="flex justify-center gap-2 flex-wrap no-print" id="chips" style="margin-bottom:44px">
             <button class="chip active" data-v="all" onclick="setView('all')">બધું</button>
             <button class="chip" data-v="biz" onclick="setView('biz')"><i class="fa-solid fa-store"></i> સેવાઓ</button>
             <button class="chip" data-v="doc" onclick="setView('doc')"><i class="fa-solid fa-file-circle-check"></i> જરૂરી પુરાવા</button>
@@ -117,11 +130,9 @@
 
         <!-- Section 1: અમારે ત્યાં મળતી મુખ્ય સેવાઓ (Business Services) -->
         <section id="bizSection" class="mb-14">
-            <div class="mb-8 flex justify-center">
-                <div class="bg-gradient-to-r from-slate-900 via-blue-950 to-slate-900 text-amber-300 px-10 py-3 rounded-full shadow-xl border-2 border-blue-500/50 text-center">
+            <div class="sec-title"><span class="ln"></span><div class="pill bg-gradient-to-r from-slate-900 via-blue-950 to-slate-900 text-amber-300 px-10 py-3 rounded-full shadow-xl border-2 border-blue-500/50 text-center">
                     <h2 class="text-xl sm:text-2xl font-extrabold tracking-wide text-white font-gujarati">અમારા બિઝનેસની સેવાઓ</h2>
-                </div>
-            </div>
+                </div><span class="ln"></span></div>
 
             <div id="businessServicesContainer" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                 <!-- JS populated -->
@@ -130,11 +141,9 @@
 
         <!-- Section 2: ડોક્યુમેન્ટ બનાવવા માટેના પુરાવા (Documents List) -->
         <section id="docSection" class="mb-10">
-            <div class="mb-8 flex justify-center">
-                <div class="bg-gradient-to-r from-slate-900 via-indigo-950 to-slate-900 text-amber-300 px-10 py-3 rounded-full shadow-xl border-2 border-indigo-500/50 text-center">
+            <div class="sec-title"><span class="ln"></span><div class="pill bg-gradient-to-r from-slate-900 via-indigo-950 to-slate-900 text-amber-300 px-10 py-3 rounded-full shadow-xl border-2 border-indigo-500/50 text-center">
                     <h2 class="text-xl sm:text-2xl font-extrabold tracking-wide text-white font-gujarati">ડોક્યુમેન્ટ બનાવવા માટેના જરૂરી પુરાવા</h2>
-                </div>
-            </div>
+                </div><span class="ln"></span></div>
 
             <div id="documentGuidesContainer" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 <!-- JS populated -->
